@@ -2,6 +2,7 @@
 
 ## Project description
 This is a REST API project to add players and view Montreal Canadians' Hokey Team.
+
 PS : The project can be upgraded for demonstration purpose.
 
 ## Models
@@ -35,11 +36,11 @@ Team
 -   Status: 200 OK
 
 
-    http://localhost:8080/api/team/2020
+    http://localhost:8080/api/team/2022
     {
        "id":2,
        "coach":"Dominique Ducharme",
-       "teamYear":"2020",
+       "teamYear":"2022",
        "players":[
           {
              "number":31,
@@ -81,11 +82,11 @@ Team
        ]
     }
 
-    http://localhost:8080/api/team/2019
+    http://localhost:8080/api/team/2022
     {
        "id":1,
        "coach":"Dominique Ducharme",
-       "teamYear":"2019",
+       "teamYear":"2022",
        "players":[
           {
              "number":31,
@@ -135,7 +136,7 @@ Team
 
 
 ```
-http://localhost:8080/api/player --header "Content-Type:application/json"
+http://localhost:8080/api/player  --header "Content-Type:application/json"
 
 {
   "number":99,
