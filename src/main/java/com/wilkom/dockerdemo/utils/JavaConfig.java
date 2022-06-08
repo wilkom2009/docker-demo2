@@ -1,7 +1,5 @@
 package com.wilkom.dockerdemo.utils;
 
-import java.util.Base64;
-
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -17,9 +15,6 @@ import com.amazonaws.services.secretsmanager.model.GetSecretValueRequest;
 import com.amazonaws.services.secretsmanager.model.GetSecretValueResult;
 import com.google.gson.Gson;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Configuration
 public class JavaConfig {
     private Gson gson = new Gson();
