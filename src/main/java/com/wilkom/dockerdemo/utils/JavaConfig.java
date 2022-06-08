@@ -15,6 +15,10 @@ import com.amazonaws.services.secretsmanager.model.GetSecretValueRequest;
 import com.amazonaws.services.secretsmanager.model.GetSecretValueResult;
 import com.google.gson.Gson;
 
+/**
+ * Config class to manage AWS Secret manager value retrieving
+ * @author Wilson
+ */
 @Configuration
 public class JavaConfig {
     private Gson gson = new Gson();
