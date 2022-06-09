@@ -2,11 +2,6 @@ server:
   port: 8080
 
 spring:
-  # datasource:
-  #   driver-class-name: com.mysql.cj.jdbc.Driver
-  #   url: jdbc:mysql://mydemodb.ckyrtu3oirai.us-east-1.rds.amazonaws.com:3306/demodb
-  #   username: admin
-  #   password: adminadmin
 
   jpa:
     hibernate:
@@ -15,6 +10,6 @@ spring:
 
 aws:
   cridentials:
-    access-key-id: AKIAUMS477TCZFFYU3V7
-    secret-access-key: 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
+    access-key-id: xxxxx
+    secret-access-key: xxxxx
 
