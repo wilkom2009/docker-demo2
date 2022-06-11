@@ -2,13 +2,10 @@ package com.wilkom.dockerdemo.utils;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.secretsmanager.AWSSecretsManager;
 import com.amazonaws.services.secretsmanager.AWSSecretsManagerClientBuilder;
 import com.amazonaws.services.secretsmanager.model.GetSecretValueRequest;
@@ -22,11 +19,11 @@ import com.google.gson.Gson;
 @Configuration
 public class JavaConfig {
     private Gson gson = new Gson();
-    @Value("${aws.cridentials.access-key-id}")
-    private String accessKey;
-    @Value("${aws.cridentials.secret-access-key}")
-    private String secretKey;
 
+    /**
+     * Customize the data source config values reading from Bean class
+     * Instead of reading from application.yaml
+     */
     @Bean
     public DataSource dataSource() {
         SecretValue secretValue = getSecretValue();
@@ -41,13 +38,12 @@ public class JavaConfig {
 
     private SecretValue getSecretValue() {
 
-        String secretName = "testdb/dev";
+        String secretName = "demodb/test";
         String region = "us-east-1";
 
         // Create a Secrets Manager client
         AWSSecretsManager client = AWSSecretsManagerClientBuilder.standard()
                 .withRegion(region)
-                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKey, secretKey)))
                 .build();
 
         String secret;
